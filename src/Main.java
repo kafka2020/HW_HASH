@@ -1,7 +1,4 @@
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
 
@@ -22,6 +19,7 @@ public class Main {
         costPerAddress.put(city_f, 10);
 
         int totalShippingCost = 0;
+        Set<String> uniqueShippingCountry = new HashSet<>();
 
         Scanner scanner = new Scanner(System.in);
 
@@ -45,6 +43,8 @@ public class Main {
                 System.out.println("Стоимость доставки составит: " + shippingСost + " руб.");
                 totalShippingCost += shippingСost;
                 System.out.println("Общая стоимость всех доставок: " + totalShippingCost + " руб.");
+                uniqueShippingCountry.add(country);
+                System.out.println("Количество уникальных стран, в которые были оформлены доставки: " + uniqueShippingCountry.size());
             } else {
                 System.out.println("Доставки по этому адресу нет");
             }
